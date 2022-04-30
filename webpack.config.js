@@ -1,50 +1,58 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const loader = require("css-loader");
-const { Chunk } = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    main:path.resolve(__dirname, "src/assets/js/index.js"),
-    form:path.resolve(__dirname, "src/assets/js/form.js")
-},
-
+    main: path.join(__dirname, "src/assets/js/index.js"),
+    form: path.join(__dirname, "src/assets/js/form.js"),
+    topbar: path.join(__dirname, "src/assets/js/topbar.js"),
+  },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.join(__dirname, "dist"),
     filename: "[name].bundle.js"
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        test: /\.js/,
+        exclude: /(node_modules)/,
+        use: ["babel-loader"]
       },
       {
-          test: /\.scss$/i,
-          use: ["style-loader","css-loader", "sass-loader"]
+        test: /\.scss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename:"index.html",
-      template: path.resolve(__dirname, "src/index.html"),
-      Chunk: ["main"]
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/assets/images/*',
+          to: 'assets/images/[name][ext]',
+        },
+      ],
     }),
     new HtmlWebpackPlugin({
-      filename:"form.html",
-      template: path.resolve(__dirname, "src/page/form.html"),
-      Chunk: ["form"]
+      filename: "index.html",
+      template: path.join(__dirname, "./src/index.html"),
+      chunks: ["main", "topbar"]
+    }),
+    new HtmlWebpackPlugin({
+      filename: "form.html",
+      template: path.join(__dirname, "./src/page/form.html"),
+      chunks: ["form", "topbar"]
     })
   ],
+  stats: "minimal",
   devtool: "source-map",
   mode: "development",
   devServer: {
+    open: false,
     static: path.resolve(__dirname, './dist'),
-    open: true,
     port: 4000
   }
 };
