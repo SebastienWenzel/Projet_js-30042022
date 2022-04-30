@@ -1,0 +1,30 @@
+npm et nodes js install verifier Version node -v et npm -v (bash: node)
+
+------Package.json------
+
+- npm init -y(par défaut)
+
+------BABEL------
+
+- npm i @babel/core @babel/cli @babel/preset-env
+
+(en cas de suppression de fichier réinstallé avec: npm i)
+
+Package.json partie scripts
+
+"babel": "babel ./src/assets/js/es6.js" -o newfile.js
+
+-o = --out-file = duplique le fichier
+
+
+------WEBPACK------
+
+npm i webpack webpack-cli webpack-dev-server babel-loader
+
+
+LANCEMENT
+
+
+npm run wepack  création du dossier DIST 
+
+npm start live server du web
