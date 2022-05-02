@@ -2,7 +2,9 @@
 @import './base/base';
 @import './abstract/variable';
 @import './layout/utils';
-@import './media-queries';
+@import './layout/media-queries';
+@import './classes';
+
 .container{
     min-height: 100vh;
     display: grid;

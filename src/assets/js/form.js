@@ -1,3 +1,2 @@
-import '../sass/form.scss'
-
-console.log('form');
+import'../sass/style.scss';
+import '../sass/form.scss';
