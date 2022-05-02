@@ -5,9 +5,8 @@ const form = document.querySelector("form");
 const errorElement = document.querySelector("#errors");
 let errors = [];
 
-
   form.addEventListener("submit", async event => {
-      //stop rafraichir la page après chaque submit
+    //stop rafraichir la page après chaque submit
     event.preventDefault();
     const formData = new FormData(form);
     const article = Object.fromEntries(formData.entries());
