@@ -28,3 +28,10 @@ LANCEMENT
 npm run wepack  création du dossier DIST 
 
 npm start live server du web
+
+
+
+
+Envoie article sur une API qui concerve pendant 10h les données
+
+https://restapi.fr/
