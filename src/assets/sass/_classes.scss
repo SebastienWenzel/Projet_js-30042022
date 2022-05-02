@@ -26,3 +26,10 @@
         color: var(--dark);
     }
 }
+
+.text{
+
+    &-error{
+        color:var(--error);
+    }
+}
