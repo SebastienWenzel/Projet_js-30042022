@@ -15,18 +15,45 @@
 
 header{
     grid-area: header;
-    background: green;
+    background: var(--dark);
     padding: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    a{
+        color: white;
+    }
+    .header-brand{
+        font-size: 4rem ;
+        font-weight: 700;
+    }
+    ul{
+        display: flex;
+       li{
+        .header-nav{
+            font-size: 1.8rem;
+            padding: 0 10px;
+        }
+        .active {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+       }
+    }
 }
 
 .content{
     grid-area: content;
-    background: red;
-    padding: 20px;
+    
+    padding: 2rem;
 
 }
 footer{
     grid-area: footer;
-    background: #333;
-    padding: 20px;
+    background: var( --dark-purple);
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
 }
