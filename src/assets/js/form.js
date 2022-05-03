@@ -31,7 +31,7 @@ let errors = [];
 
 const formIsValid = article => {
     errors = [];
-    if (!article.author || !article.category || !article.content) {
+    if (!article.author || !article.category || !article.content || !article.img || !article.title) {
       errors.push("Vous devez renseigner tous les champs");
     }
     if (article.content.length < 20) {
