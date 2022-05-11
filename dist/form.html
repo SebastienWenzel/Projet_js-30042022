@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d21884ba6b.js" crossorigin="anonymous"></script>
     <title>Formulaire</title>
 <script defer src="form.bundle.js"></script><script defer src="topbar.bundle.js"></script></head>
 <body>
     <div class="container">
         <header>
             <a class="header-brand" href="./index.html">Blog</a>
-            <ul>
-                <li>
-                    <a class="header-nav " href="./index.html">Accueil</a>
-                </li>
-                <li>
-                    <a class="header-nav active" href="../dist/form.html">Créer un article</a>
-                </li>
-            </ul>
+            <div class="header-menu">
+              <ul>
+                  <li>
+                      <a class="header-nav" href="./index.html">Accueil</a>
+                  </li>
+                  <li>
+                      <a class="header-nav active" href="../dist/form.html">Créer un article</a>
+                  </li>
+              </ul>
+              <div class="header-menu-icon">
+                  <i class="fa-solid fa-bars"></i>
+              </div>
+          </div>
         </header>
         <main class="content">
             <form>
@@ -44,8 +50,8 @@
                 </div>
                 <ul class="text-error" id="errors"></ul>
                 <div class="form-btn-container">
-                  <button class="btn btn-secondary">Annuler</button>
-                  <button class="btn btn-primary">Sauvegarder</button>
+                  <button type="button" class="btn btn-secondary">Annuler</button>
+                  <button type="submit" class="btn btn-primary">Sauvegarder</button>
                 </div>
               </form>
         </main>
