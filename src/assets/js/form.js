@@ -1,6 +1,5 @@
 import'../sass/style.scss';
 import '../sass/form.scss';
-import { async } from 'regenerator-runtime';
 
 const form = document.querySelector("form");
 const errorElement = document.querySelector("#errors");
@@ -8,6 +7,9 @@ const btnCancel = document.querySelector('.btn-secondary');
 let articleId;
 let errors = [];
 
+
+// Nous remplissons tous les champs de notre formulaire en créant des références
+// et en utilisant les informations récupérées du serveur.
 const fillForm = (article) => {
 
   const author = document.querySelector('input[name=author]');
@@ -23,6 +25,9 @@ const fillForm = (article) => {
 
 };
 
+// Nous allons créer une fonction asynchrone que nous invoquons de suite.
+// Nous parsons l’URL de la page et vérifions si nous avons un paramètre id.
+// Si nous avons un id, nous récupérons l’article correspondant.
 const initForm = async () => {
   const params = new URL(location.href);
   articleId = params.searchParams.get("id");
@@ -30,7 +35,6 @@ const initForm = async () => {
   const response = await fetch(`https://restapi.fr/api/articles/${ articleId } `);
   if (response.status < 299) {
     const article = await response.json();
-    console.log(article);
     fillForm(article);
     }
   }
@@ -42,6 +46,11 @@ btnCancel.addEventListener('click', () => {
   location.assign('/dist/index.html');
 });
 
+
+// Lorsque nous éditons, nous ne créons pas de nouvelle ressource sur le serveur.
+// Nous n’utilisons donc pas une requête POST mais une requête PATCH.
+// Pas PUT car nous ne remplaçons pas la ressource distante (nous gardons
+// la date de création et l’id).
 form.addEventListener("submit", async event => {
   event.preventDefault();
   const formData = new FormData(form);
@@ -69,7 +78,7 @@ form.addEventListener("submit", async event => {
       }
       
       if (response.status < 299){
-        location.assign('/dist/index.html');
+        window.location.assign('/dist/index.html');
       }
     } catch (e) {
       console.error("e : ", e);
