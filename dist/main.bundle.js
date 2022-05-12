@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Landscape phones and down */\n/* Landscape phone to portrait tablet */\n/* Portrait tablet to landscape and desktop */\n/* Large desktop */\n.content {\n  background: var(--divider);\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  padding-top: 5rem;\n}\n.content .sidebar {\n  flex: 0 0 25rem;\n  padding: 0 2rem 2rem 2rem;\n  margin-top: 5rem;\n}\n.content .sidebar .categories {\n  padding: 2rem;\n  background: white;\n  border-radius: 0.3rem;\n  box-shadow: var(--box-shadow);\n}\n.content .sidebar .categories li {\n  margin: 1rem;\n  transition: color 0.2s;\n  cursor: pointer;\n}\n.content .sidebar .categories li:hover {\n  color: var(--primary);\n}\n.content .sidebar .categories li:hover strong {\n  color: var(--primary);\n}\n.content .articles-container {\n  max-width: 80rem;\n  width: 100%;\n  margin: 5rem 0 10rem 0;\n}\n.content .articles-container .article {\n  background: white;\n  padding: 0 5rem;\n  border-radius: 0.3rem;\n  display: flex;\n  margin-bottom: 5rem;\n  flex-direction: column;\n  align-items: center;\n  box-shadow: var(--box-shadow);\n}\n@media (max-width: 480px) {\n  .content .articles-container .article {\n    padding: 0 2rem;\n  }\n}\n.content .articles-container .article img {\n  height: 6rem;\n  width: 6rem;\n  border-radius: 50%;\n  margin-top: -3rem;\n}\n.content .articles-container .article h2 {\n  margin-top: 2rem;\n  margin-bottom: 0;\n}\n.content .articles-container .article .article-author {\n  color: var(--hint);\n  margin-bottom: 3rem;\n}\n.content .articles-container .article .article-content {\n  max-width: 550px;\n  white-space: pre-line;\n}\n.content .articles-container .article .article-actions {\n  width: 100%;\n  display: flex;\n  justify-content: flex-end;\n  padding: 2rem 0;\n  margin-top: 2rem;\n  border-top: 1px solid var(--divider);\n}\n.content .articles-container .article .article-actions .btn {\n  margin-left: 1rem;\n}", "",{"version":3,"sources":["webpack://./src/assets/sass/layout/_media-queries.scss","webpack://./src/assets/sass/index.scss"],"names":[],"mappings":"AAAA,8BAAA;AAOE,uCAAA;AAOA,6CAAA;AAOA,kBAAA;ACnBF;EACE,0BAAA;EACA,aAAA;EACA,uBAAA;EACA,uBAAA;EACA,iBAAA;AAGF;AAFE;EACE,eAAA;EACA,yBAAA;EACA,gBAAA;AAIJ;AAHI;EACE,aAAA;EACA,iBAAA;EACA,qBAAA;EACA,6BAAA;AAKN;AAJM;EACE,YAAA;EACA,sBAAA;EACA,eAAA;AAMR;AALQ;EACE,qBAAA;AAOV;AANU;EACE,qBAAA;AAQZ;AAFE;EACE,gBAAA;EACA,WAAA;EACA,sBAAA;AAIJ;AAHI;EACE,iBAAA;EACA,eAAA;EAIA,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,sBAAA;EACA,mBAAA;EACA,6BAAA;AAEN;AD7CI;ECgCA;IAII,eAAA;EAaN;AACF;AANM;EACE,YAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;AAQR;AANM;EACE,gBAAA;EACA,gBAAA;AAQR;AANM;EACE,kBAAA;EACA,mBAAA;AAQR;AANM;EACE,gBAAA;EACA,qBAAA;AAQR;AANM;EACE,WAAA;EACA,aAAA;EACA,yBAAA;EACA,eAAA;EACA,gBAAA;EACA,oCAAA;AAQR;AAPQ;EACE,iBAAA;AASV","sourcesContent":["/* Landscape phones and down */\r\n@mixin xs {\r\n    @media (max-width: 480px) {\r\n      @content;\r\n    }\r\n  }\r\n  \r\n  /* Landscape phone to portrait tablet */\r\n  @mixin sm {\r\n    @media (max-width: 767px) {\r\n      @content;\r\n    }\r\n  }\r\n  \r\n  /* Portrait tablet to landscape and desktop */\r\n  @mixin md {\r\n    @media (min-width: 768px) and (max-width: 979px) {\r\n      @content;\r\n    }\r\n  }\r\n  \r\n  /* Large desktop */\r\n  @mixin xl {\r\n    @media (min-width: 1200px) {\r\n      @content;\r\n    }\r\n  }","@import './layout/media-queries';\r\n\r\n.content {\r\n  background: var(--divider);\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: flex-start;\r\n  padding-top: 5rem;\r\n  .sidebar{\r\n    flex: 0 0 25rem;\r\n    padding: 0 2rem 2rem 2rem;\r\n    margin-top:5rem;\r\n    .categories{\r\n      padding: 2rem;\r\n      background: white;\r\n      border-radius: 0.3rem;\r\n      box-shadow: var(--box-shadow);\r\n      li{\r\n        margin: 1rem;\r\n        transition: color 0.2s;\r\n        cursor: pointer;\r\n        &:hover{\r\n          color: var(--primary);\r\n          strong{\r\n            color: var(--primary);\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .articles-container {\r\n    max-width: 80rem;\r\n    width: 100%;\r\n    margin: 5rem 0 10rem 0;\r\n    .article {\r\n      background: white;\r\n      padding: 0 5rem;\r\n      @include xs {\r\n        padding: 0 2rem;\r\n      }\r\n      border-radius: 0.3rem;\r\n      display: flex;\r\n      margin-bottom: 5rem;\r\n      flex-direction: column;\r\n      align-items: center;\r\n      box-shadow: var(--box-shadow);\r\n      img {\r\n        height: 6rem;\r\n        width: 6rem;\r\n        border-radius: 50%;\r\n        margin-top: -3rem;\r\n      }\r\n      h2 {\r\n        margin-top: 2rem;\r\n        margin-bottom: 0;\r\n      }\r\n      .article-author {\r\n        color: var(--hint);\r\n        margin-bottom: 3rem;\r\n      }\r\n      .article-content {\r\n        max-width: 550px;\r\n        white-space: pre-line;\r\n      }\r\n      .article-actions {\r\n        width: 100%;\r\n        display: flex;\r\n        justify-content: flex-end;\r\n        padding: 2rem 0;\r\n        margin-top: 2rem;\r\n        border-top: 1px solid var(--divider);\r\n        .btn {\r\n          margin-left: 1rem;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Landscape phones and down */\n/* Landscape phone to portrait tablet */\n/* Portrait tablet to landscape and desktop */\n/* Large desktop */\n.content {\n  background: var(--divider);\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  padding-top: 5rem;\n}\n.content .sidebar {\n  flex: 0 0 25rem;\n  padding: 0 2rem 2rem 2rem;\n  margin-top: 5rem;\n}\n.content .sidebar .categories {\n  padding: 2rem;\n  background: white;\n  border-radius: 0.3rem;\n  box-shadow: var(--box-shadow);\n}\n.content .sidebar .categories li {\n  margin: 1rem;\n  transition: color 0.2s;\n  cursor: pointer;\n}\n.content .sidebar .categories li:hover {\n  color: var(--primary);\n}\n.content .sidebar .categories li:hover strong {\n  color: var(--primary);\n}\n.content .sidebar .categories .active {\n  color: var(--primary);\n  font-weight: 700;\n}\n.content .sidebar .categories .active strong {\n  color: var(--primary);\n}\n.content .articles-container {\n  max-width: 80rem;\n  width: 100%;\n  margin: 5rem 0 10rem 0;\n}\n.content .articles-container .article {\n  background: white;\n  padding: 0 5rem;\n  border-radius: 0.3rem;\n  display: flex;\n  margin-bottom: 5rem;\n  flex-direction: column;\n  align-items: center;\n  box-shadow: var(--box-shadow);\n}\n@media (max-width: 480px) {\n  .content .articles-container .article {\n    padding: 0 2rem;\n  }\n}\n.content .articles-container .article img {\n  height: 6rem;\n  width: 6rem;\n  border-radius: 50%;\n  margin-top: -3rem;\n}\n.content .articles-container .article h2 {\n  margin-top: 2rem;\n  margin-bottom: 0;\n}\n.content .articles-container .article .article-author {\n  color: var(--hint);\n  margin-bottom: 3rem;\n}\n.content .articles-container .article .article-content {\n  max-width: 550px;\n  white-space: pre-line;\n}\n.content .articles-container .article .article-actions {\n  width: 100%;\n  display: flex;\n  justify-content: flex-end;\n  padding: 2rem 0;\n  margin-top: 2rem;\n  border-top: 1px solid var(--divider);\n}\n.content .articles-container .article .article-actions .btn {\n  margin-left: 1rem;\n}", "",{"version":3,"sources":["webpack://./src/assets/sass/layout/_media-queries.scss","webpack://./src/assets/sass/index.scss"],"names":[],"mappings":"AAAA,8BAAA;AAOE,uCAAA;AAOA,6CAAA;AAOA,kBAAA;ACnBF;EACE,0BAAA;EACA,aAAA;EACA,uBAAA;EACA,uBAAA;EACA,iBAAA;AAGF;AAFE;EACE,eAAA;EACA,yBAAA;EACA,gBAAA;AAIJ;AAHI;EACE,aAAA;EACA,iBAAA;EACA,qBAAA;EACA,6BAAA;AAKN;AAJM;EACE,YAAA;EACA,sBAAA;EACA,eAAA;AAMR;AALQ;EACE,qBAAA;AAOV;AANU;EACE,qBAAA;AAQZ;AAJM;EACE,qBAAA;EACA,gBAAA;AAMR;AALQ;EACE,qBAAA;AAOV;AAFE;EACE,gBAAA;EACA,WAAA;EACA,sBAAA;AAIJ;AAHI;EACE,iBAAA;EACA,eAAA;EAIA,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,sBAAA;EACA,mBAAA;EACA,6BAAA;AAEN;ADpDI;ECuCA;IAII,eAAA;EAaN;AACF;AANM;EACE,YAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;AAQR;AANM;EACE,gBAAA;EACA,gBAAA;AAQR;AANM;EACE,kBAAA;EACA,mBAAA;AAQR;AANM;EACE,gBAAA;EACA,qBAAA;AAQR;AANM;EACE,WAAA;EACA,aAAA;EACA,yBAAA;EACA,eAAA;EACA,gBAAA;EACA,oCAAA;AAQR;AAPQ;EACE,iBAAA;AASV","sourcesContent":["/* Landscape phones and down */\r\n@mixin xs {\r\n    @media (max-width: 480px) {\r\n      @content;\r\n    }\r\n  }\r\n  \r\n  /* Landscape phone to portrait tablet */\r\n  @mixin sm {\r\n    @media (max-width: 767px) {\r\n      @content;\r\n    }\r\n  }\r\n  \r\n  /* Portrait tablet to landscape and desktop */\r\n  @mixin md {\r\n    @media (min-width: 768px) and (max-width: 979px) {\r\n      @content;\r\n    }\r\n  }\r\n  \r\n  /* Large desktop */\r\n  @mixin xl {\r\n    @media (min-width: 1200px) {\r\n      @content;\r\n    }\r\n  }","@import './layout/media-queries';\r\n\r\n.content {\r\n  background: var(--divider);\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: flex-start;\r\n  padding-top: 5rem;\r\n  .sidebar{\r\n    flex: 0 0 25rem;\r\n    padding: 0 2rem 2rem 2rem;\r\n    margin-top:5rem;\r\n    .categories{\r\n      padding: 2rem;\r\n      background: white;\r\n      border-radius: 0.3rem;\r\n      box-shadow: var(--box-shadow);\r\n      li{\r\n        margin: 1rem;\r\n        transition: color 0.2s;\r\n        cursor: pointer;\r\n        &:hover{\r\n          color: var(--primary);\r\n          strong{\r\n            color: var(--primary);\r\n          }\r\n        }\r\n      }\r\n      .active{\r\n        color: var(--primary);\r\n        font-weight: 700;\r\n        strong{\r\n          color: var(--primary);\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .articles-container {\r\n    max-width: 80rem;\r\n    width: 100%;\r\n    margin: 5rem 0 10rem 0;\r\n    .article {\r\n      background: white;\r\n      padding: 0 5rem;\r\n      @include xs {\r\n        padding: 0 2rem;\r\n      }\r\n      border-radius: 0.3rem;\r\n      display: flex;\r\n      margin-bottom: 5rem;\r\n      flex-direction: column;\r\n      align-items: center;\r\n      box-shadow: var(--box-shadow);\r\n      img {\r\n        height: 6rem;\r\n        width: 6rem;\r\n        border-radius: 50%;\r\n        margin-top: -3rem;\r\n      }\r\n      h2 {\r\n        margin-top: 2rem;\r\n        margin-bottom: 0;\r\n      }\r\n      .article-author {\r\n        color: var(--hint);\r\n        margin-bottom: 3rem;\r\n      }\r\n      .article-content {\r\n        max-width: 550px;\r\n        white-space: pre-line;\r\n      }\r\n      .article-actions {\r\n        width: 100%;\r\n        display: flex;\r\n        justify-content: flex-end;\r\n        padding: 2rem 0;\r\n        margin-top: 2rem;\r\n        border-top: 1px solid var(--divider);\r\n        .btn {\r\n          margin-left: 1rem;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -692,9 +692,17 @@ __webpack_require__.r(__webpack_exports__);
 
 const articleContainerElement = document.querySelector(".articles-container");
 const categoriesContainerelement = document.querySelector('.categories');
+let filter;
+let articles;
 
-const createArticles = articles => {
-  const articlesDOM = articles.map(article => {
+const createArticles = () => {
+  const articlesDOM = articles.filter(article => {
+    if (filter) {
+      return article.category === filter;
+    } else {
+      return true;
+    }
+  }).map(article => {
     const articleDOM = document.createElement("div");
     articleDOM.classList.add("article");
     articleDOM.innerHTML = `
@@ -752,13 +760,27 @@ const displayMenuCategories = categoriesArr => {
   const liElements = categoriesArr.map(categoryElem => {
     const li = document.createElement('li');
     li.innerHTML = `${categoryElem[0]} ( <strong>${categoryElem[1]}</strong> )`;
+    li.addEventListener('click', () => {
+      if (filter === categoryElem[0]) {
+        filter = null;
+        li.classList.remove('active');
+        createArticles();
+      } else {
+        filter = categoryElem[0];
+        liElements.forEach(li => {
+          li.classList.remove('active');
+        });
+        li.classList.add('active');
+        createArticles();
+      }
+    });
     return li;
   });
   categoriesContainerelement.innerHTML = '';
   categoriesContainerelement.append(...liElements);
 };
 
-const createMenuCategories = articles => {
+const createMenuCategories = () => {
   const categories = articles.reduce((acc, article) => {
     if (acc[article.category]) {
       acc[article.category]++;
@@ -770,16 +792,16 @@ const createMenuCategories = articles => {
   }, {});
   const categoriesArr = Object.keys(categories).map(category => {
     return [category, categories[category]];
-  });
+  }).sort((c1, c2) => c1[0].localeCompare(c2[0]));
   displayMenuCategories(categoriesArr);
 };
 
 const fetchArticle = async () => {
   try {
     const response = await fetch("https://restapi.fr/api/articles");
-    const articles = await response.json();
-    createArticles(articles);
-    createMenuCategories(articles);
+    articles = await response.json();
+    createArticles();
+    createMenuCategories();
   } catch (e) {
     console.log("e : ", e);
   }
